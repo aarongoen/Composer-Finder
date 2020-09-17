@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require './lib/composer_finder'
+
+ComposerFinder::CLI.new.call
