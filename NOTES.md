@@ -9,9 +9,9 @@ How to Build a CLI Gem
 7. Discover objects.
 8. program
 
-This CLI project helps the user to discover essential classical music composers.
+This CLI project helps the user to discover essential classical music composers, using OpenOpus API.
 
-The OpenOpus API will be used: "https://api.openopus.org/composer/list/epoch/all.json"
+"https://api.openopus.org/composer/list/epoch/all.json"
 
 The CLI should:
     1. Greet the user
@@ -31,7 +31,10 @@ The CLI should:
 
 
 "Role Playing Scenario"
-Hello! Welcome to the Discovering The Great Composers app!
+
+User types composer-finder-yes
+
+puts "Hello! Welcome to the Discovering The Great Composers app!
 
 This app can help you find out about composers you may not know about yet. 
 
