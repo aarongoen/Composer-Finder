@@ -21,6 +21,7 @@ class ComposerFinderYes::CLI
         while input != "exit"
             puts "What would you like to do: list, info, help, or exit?"
             input = gets.strip.downcase
+            
             case input
             when "list"
                 list
@@ -59,7 +60,7 @@ class ComposerFinderYes::CLI
 
     def info 
         puts "Which composer would you like to learn more about?"
-        input = gets.strip
+        input = gets.strip.downcase
         case input
         #take the composer list and show all attributes
             when "1"

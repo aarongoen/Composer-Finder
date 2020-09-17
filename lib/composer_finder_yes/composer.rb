@@ -1,5 +1,14 @@
 class ComposerFinderYes::Composer
 
+attr_accessor :name, :birth, :death, :epoch
+
+def initialize(name, birth = nil, death = nil, epoch)
+    @name = name
+    @birth = birth 
+    @death = death 
+    @epoch = epoch
+end 
+
 def self.short_list
     #get a #handful# of instances of composers
     #Go through API hash to find random composers.
