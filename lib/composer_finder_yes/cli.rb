@@ -5,20 +5,22 @@ class ComposerFinderYes::CLI
     
     def call
         greeting 
-        menu
-        goodbye
+        # menu
+        # goodbye
     end
 
     def greeting
-        puts "Hello! Welcome to the Discovering The Great Composers app! This app can help you find out about composers you may not know about yet."
+        puts "Hello! Welcome to the Discovering The Great Composers app! n\
+         This app can help you find out about composers you may not know about yet."
+        menu 
     end
 
     def menu
         #Why do I need "input = nil"?
         input = nil
-        binding.pry
         while input != "exit"
             puts "What would you like to do: list, info, help, or exit?"
+            input = gets.strip.downcase
             case input
             when "list"
                 list
@@ -26,12 +28,12 @@ class ComposerFinderYes::CLI
                 info
             when "help"
                 help
-            # when "exit"
-            #     exit 
+            when "exit"
+                exit 
             else
                 puts "Invalid entry. What would you like to do: list, info, help, or exit?"
             end
-            input = gets.strip.downcas
+            
         end
     end
 
@@ -48,7 +50,7 @@ class ComposerFinderYes::CLI
             4. Claude Debussy
             5. John Williams"
             #@composers = ComposerFinderYes::Composer.short_list
-        menu 
+        # menu 
         
         #if user selects one of these composers, call `info`
         #else back to 
@@ -60,34 +62,31 @@ class ComposerFinderYes::CLI
         input = gets.strip
         case input
         #take the composer list and show all attributes
-        when "1"
-            puts "1. Giovanni Gabrieli, dates, Renaissance Period, link"
-        when "2"
-            puts "2. Richard Wagner, dates, Romantic Period, link"
-        when "3"
-            puts "3. Ludwig van Beethoven, dates, Romantic Period, link"
-        when "4"
-            puts "4. Claude Debussy, dates, Impressionist Period, link"
-        when "5"
-            puts "5. John Williams, dates, Movie Soundtrack Period, link"
-        # menu
+            when "1"
+                puts "1. Giovanni Gabrieli, dates, Renaissance Period, link"
+            when "2"
+                puts "2. Richard Wagner, dates, Romantic Period, link"
+            when "3"
+                puts "3. Ludwig van Beethoven, dates, Romantic Period, link"
+            when "4"
+                puts "4. Claude Debussy, dates, Impressionist Period, link"
+            when "5"
+                puts "5. John Williams, dates, Movie Soundtrack Period, link"
+        menu
     end
 
     def help
-        puts    "list - Lists a set of random composers.
+                "list - Lists a set of random composers.
                 help - Brings up this dialog
                 info - Gives the composer's dates and time period (and link?).
                 exit - Exits the program."
         menu
     end
 
-    def goodbye
-        puts "Thank you for using the Discovering the Great Composers app!"
+    def exit
+        "Thank you for using the Discovering the Great Composers app!"
+        exit
     end
 
-    # def exit
-    #     exit
-    # end
-
 end
-    
+end   

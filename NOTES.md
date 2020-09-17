@@ -1,3 +1,12 @@
+#questions
+
+How do I git push? 
+I have a repo already. Shall I overwrite it?
+How do I exit the program?
+Shall I instantiate composers in groups and then break them up in the CLI class?
+How do I connect my hash and instantiate?
+
+    
 How to Build a CLI Gem
 
 1. Plan your gem, imagine your interface
@@ -45,7 +54,8 @@ I accept: list, help, and quit.
 Main Menu Commands:
     list - Lists a set of random composers.
     help - brings up this dialog
-    info - quit - Exits the program.
+    info - Lists more info about the composer. 
+    quit - Exits the program.
 
 
 What would you like to do?
