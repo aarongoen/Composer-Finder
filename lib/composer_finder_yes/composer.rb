@@ -1,7 +1,8 @@
-# class Composer
+class ComposerFinderYes::Composer
 
-
-
+def self.short_list
+    #get a #handful# of instances of a Composer
+end 
 #     attr_accessor :composer, :scraper
 
 #     def initialize
@@ -22,4 +23,4 @@
 #     composer = composers["complete_name"]
 #     composer_dates = composers["birth"] - composers["death"]
 
-# end
+end
