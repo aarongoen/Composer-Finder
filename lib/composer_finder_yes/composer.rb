@@ -21,16 +21,24 @@ class ComposerFinderYes::Composer
         @complete_name
     end
 
-    def dates
-        "(#{birth.split("-")[0]}-#{death.split("-")[0]})"
+    def birth_year
+        "#{birth.split("-")[0].to_i}"
     end
 
-    def composer_age
-        @death.to_i - @birth.to_i
+    def death_year
+        "#{death.split("-")[0].to_i}"
+    end
 
-    
+    def dates
+        "(#{birth_year}-#{death_year})"
+    end
+
+    def age
+        "aged #{death_year.to_i} - #{birth_year.to_i}"
+        # binding.pry 
+    end
+
         #turn into date objects?
         #"https://ruby-doc.org/stdlib-2.7.1/libdoc/date/rdoc/Date.html"
-    end
 
 end

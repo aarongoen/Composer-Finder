@@ -72,8 +72,8 @@ This app can help you find out about composers you may not know about yet."
         index = input.to_i-1
         if index.between?(0, @@short_list.length-1)
             composer = @@short_list[index]
-            puts "#{composer.name} #{composer.dates}, #{composer.epoch} Era"
-            
+            puts "#{composer.name} #{composer.dates}, #{composer.age}, #{composer.epoch} Era"
+        # elsif
         elsif input == "list"
             list 
         else
