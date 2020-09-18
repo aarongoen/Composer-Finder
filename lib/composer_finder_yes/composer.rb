@@ -1,4 +1,5 @@
 class ComposerFinderYes::Composer
+    require 'date'
 
     attr_accessor :complete_name, :birth, :death, :epoch
 
@@ -21,11 +22,13 @@ class ComposerFinderYes::Composer
     end
 
     def dates
-       puts "#{birth} - #{death}"
+        "(#{birth.split("-")[0]}-#{death.split("-")[0]})"
     end
 
     def composer_age
         @death.to_i - @birth.to_i
+
+    
         #turn into date objects?
         #"https://ruby-doc.org/stdlib-2.7.1/libdoc/date/rdoc/Date.html"
     end

@@ -12,13 +12,11 @@ class ComposerFinderYes::CLI
         gets_composers
         ComposerFinderYes::Api
         menu
-        
-        # menu
-        # goodbye
     end
 
     def greeting
-        puts "Hello! Welcome to the Discovering The Great Composers app! This app can help you find out about composers you may not know about yet." 
+        puts "Hello! Welcome to the Discovering The Great Composers app!
+This app can help you find out about composers you may not know about yet." 
     end
 
     def gets_composers
@@ -74,20 +72,20 @@ class ComposerFinderYes::CLI
         index = input.to_i-1
         if index.between?(0, @@short_list.length-1)
             composer = @@short_list[index]
-            puts "#{composer.name}, (#{composer.dates}), #{composer.epoch}"
+            puts "#{composer.name} #{composer.dates}, #{composer.epoch} Era"
+            
         elsif input == "list"
             list 
         else
             puts "Invalid entry. What would you like to do: select a composer by number, list, help, or exit?"   
         end   
-                # binding.pry
     end
 
     def help
         puts "list - Lists a set of random composers.
-                help - Brings up this dialog
-                info - Gives the composer's dates and time period and link?.
-                exit - Exits the program."
+help - Brings up this dialog
+info - Gives the composer's dates and time period and link?.
+exit - Exits the program."
         menu
     end
 
