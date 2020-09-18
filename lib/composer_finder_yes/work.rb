@@ -1,4 +1,4 @@
-class Work
+# class Work
     # put this on the back-burner (only if you have time)
     
     #attr_accessor :work, :scraper

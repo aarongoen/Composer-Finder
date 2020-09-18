@@ -1,5 +1,8 @@
 #!/usr/bin/env ruby
 
 require './lib/composer_finder_yes'
-binding.pry
+
+# require "bundler/setup"
+# require "composer_finder_yes"
+# binding.pry
 ComposerFinderYes::CLI.new.call

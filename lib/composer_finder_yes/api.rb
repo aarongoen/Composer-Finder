@@ -3,17 +3,9 @@ require 'net/http'
 require 'json'
 require 'pry'
 require 'awesome_print'
+require 'date'
 
 class ComposerFinderYes::Api
-
-    # attr_accessor :name, :birth, :death, :epoch
-
-    # def initialize(name, birth = nil, death = nil, epoch)
-    #     @name = name
-    #     @birth = birth 
-    #     @death = death 
-    #     @epoch = epoch
-    # end 
 
     def gets_composer_hash
 
@@ -29,19 +21,9 @@ class ComposerFinderYes::Api
             birth = composer["birth"]
             death = composer["death"]
             epoch = composer["epoch"]
-            Composer.new(complete_name, birth, death, epoch)
+            ComposerFinderYes::Composer.new(complete_name, birth, death, epoch)
+            # binding.pry
         end
-        
-
-        Composer.new(composer)
-        #make sure they have a each have a hash with:
-            # complete_name
-            # birth
-            # death
-            # epoch
-        end 
-
-        #bach needs to inherit attributes: complete_name, birth, death, & epoch
-
+    end
 end 
 

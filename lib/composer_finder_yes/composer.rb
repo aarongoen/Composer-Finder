@@ -1,51 +1,33 @@
 class ComposerFinderYes::Composer
 
-attr_accessor :complete_name, :birth, :death, :epoch
+    attr_accessor :complete_name, :birth, :death, :epoch
 
-@@all = [] 
+    @@all = [] 
 
-def initialize(complete_name, birth, death, epoch)
-    @complete_name = complete_name
-    @birth = birth 
-    @death = death 
-    @epoch = epoch
-    @@all << self 
-end 
+    def initialize(complete_name, birth, death, epoch)
+        @complete_name = complete_name
+        @birth = birth 
+        @death = death 
+        @epoch = epoch
+        @@all << self 
+    end 
 
-def self.all
-    @@all
-end 
+    def self.all
+        @@all
+    end 
 
-# def self.short_list
-    #get a #handful# of instances of composers
-    #Go through API hash to find random composers.
-    #List 5 of them here.
+    def name
+        @complete_name
+    end
 
-#     composer_1 = self.new
-#     composer_1.name = "Giovanni Gabrieli"
-#     composer_1.dates = "1635-1680"
-#     composer_1.epoch = "Renaissance"
-#     composer_1.link = "http://..."
+    def dates
+       puts "#{birth} - #{death}"
+    end
 
-#     [composer_1, composer_2, composer_3, composer_4, composer_5]
-# end 
-
-#     def initialize
-#         @composer = composer 
-#     end
-
-#     def find_keyboard_composers(hash)
-
-#     hash.each do |
-#     end
-
-#     end
-
-#     #write code to make \({composers} key available.
-# # composers = hash["composers"]
-
-#     #get this info from the scraper class
-#     composer = composers["complete_name"]
-#     composer_dates = composers["birth"] - composers["death"]
+    def composer_age
+        @death.to_i - @birth.to_i
+        #turn into date objects?
+        #"https://ruby-doc.org/stdlib-2.7.1/libdoc/date/rdoc/Date.html"
+    end
 
 end
