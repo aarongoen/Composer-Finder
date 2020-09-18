@@ -1,29 +1,34 @@
 class ComposerFinderYes::Composer
 
-attr_accessor :name, :birth, :death, :epoch
+attr_accessor :complete_name, :birth, :death, :epoch
 
-def initialize(name, birth = nil, death = nil, epoch)
-    @name = name
+@@all = [] 
+
+def initialize(complete_name, birth, death, epoch)
+    @complete_name = complete_name
     @birth = birth 
     @death = death 
     @epoch = epoch
+    @@all << self 
 end 
 
-def self.short_list
+def self.all
+    @@all
+end 
+
+# def self.short_list
     #get a #handful# of instances of composers
     #Go through API hash to find random composers.
     #List 5 of them here.
 
-    attr_accessor :name, :dates, :epoch, :link
+#     composer_1 = self.new
+#     composer_1.name = "Giovanni Gabrieli"
+#     composer_1.dates = "1635-1680"
+#     composer_1.epoch = "Renaissance"
+#     composer_1.link = "http://..."
 
-    composer_1 = self.new
-    composer_1.name = "Giovanni Gabrieli"
-    composer_1.dates = "1635-1680"
-    composer_1.epoch = "Renaissance"
-    composer_1.link = "http://..."
-
-    [composer_1, composer_2, composer_3, composer_4, composer_5]
-end 
+#     [composer_1, composer_2, composer_3, composer_4, composer_5]
+# end 
 
 #     def initialize
 #         @composer = composer 

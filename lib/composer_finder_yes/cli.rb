@@ -5,13 +5,13 @@ class ComposerFinderYes::CLI
     
     def call
         greeting 
+        Api
         # menu
         # goodbye
     end
 
     def greeting
-        puts "Hello! Welcome to the Discovering The Great Composers app! n\
-         This app can help you find out about composers you may not know about yet."
+        puts "Hello! Welcome to the Discovering The Great Composers app! This app can help you find out about composers you may not know about yet."
         menu 
     end
 
@@ -21,20 +21,18 @@ class ComposerFinderYes::CLI
         while input != "exit"
             puts "What would you like to do: list, info, help, or exit?"
             input = gets.strip.downcase
-            
-            case input
-            when "list"
+
+            if input == "list"
                 list
-            when "info"
+            elsif input == "info"
                 info
-            when "help"
+            elsif input == "help"
                 help
-            when "exit"
-                exit 
+            elsif input == "exit"
+                say_goodbye
             else
                 puts "Invalid entry. What would you like to do: list, info, help, or exit?"
-            end
-            
+            end 
         end
     end
 
@@ -44,50 +42,62 @@ class ComposerFinderYes::CLI
         #Gets data from Api class.
         #Randomly selects values.
         #Returns list to user.
-        puts "Here is a randomized list of influential composers:
-            1. Giovanni Gabrieli
-            2. Johann Sebastian Bach
-            3. Ludwig van Beethoven
-            4. Claude Debussy
-            5. John Williams"
-            #@composers = ComposerFinderYes::Composer.short_list
-        # menu 
+        puts "Here is a randomized list of influential composers:"
+
+        ComposerFinderYes::Composer.all.each_with_index do |composer_name, i|
+            "#{i}. #{composer_name}"
+        end 
+
+        # save the result to an array called @short_list
+
+            # puts "1. Giovanni Gabrieli 
+            # 2. Johann Sebastian Bach
+            # 3. Ludwig van Beethoven
+            # 4. Claude Debussy
+            # 5. John Williams"
         
-        #if user selects one of these composers, call `info`
-        #else back to 
-        menu
+    #        
+    #     # menu 
+        
+    #     #if user selects one of these composers, call `info`
+    #     #else back to 
+    #     menu
     end
 
-    def info 
-        puts "Which composer would you like to learn more about?"
-        input = gets.strip.downcase
-        case input
-        #take the composer list and show all attributes
-            when "1"
-                puts "1. Giovanni Gabrieli, dates, Renaissance Period, link"
-            when "2"
-                puts "2. Richard Wagner, dates, Romantic Period, link"
-            when "3"
-                puts "3. Ludwig van Beethoven, dates, Romantic Period, link"
-            when "4"
-                puts "4. Claude Debussy, dates, Impressionist Period, link"
-            when "5"
-                puts "5. John Williams, dates, Movie Soundtrack Period, link"
-        menu
-    end
+    # def info 
+    #         puts "Which composer would you like to learn more about?"
+            
+    #         input = gets.strip.downcase
+    #         if input.to_i > 0
+    #     #take the composer list and show all attributes
+    #         # and
+    #         index = input.to_i-1
+    #         if input == 1
+    #             #@list_array[index] i.e. 1. Giovanni Gabrieli, dates, Renaissance Period, link"
+    #         if input == 2
+    #             #@list_array[index] i.e., "2. Richard Wagner, dates, Romantic Period, link"
+    #         if input == 3
+    #             #@list_array[index] i.e. "3. Ludwig van Beethoven, dates, Romantic Period, link"
+    #         if input == 4
+    #             #@list_array[index] i.e. "4. Claude Debussy, dates, Impressionist Period, link"
+    #         if input == 5
+    #             #@list_array[index] i.e. "5. John Williams, dates, Movie Soundtrack Period, link"
+    #         else
+    #             menu    
+    # end
 
     def help
-                "list - Lists a set of random composers.
+         "list - Lists a set of random composers.
                 help - Brings up this dialog
-                info - Gives the composer's dates and time period (and link?).
+                info - Gives the composer's dates and time period and link?.
                 exit - Exits the program."
         menu
     end
 
-    def exit
+    def say_goodbye
         "Thank you for using the Discovering the Great Composers app!"
         exit
     end
 
-end
-end   
+end 
+   
