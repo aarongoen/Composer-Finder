@@ -1,12 +1,3 @@
-#questions
-
-How do I git push? 
-I have a repo already. Shall I overwrite it?
-How do I exit the program?
-Shall I instantiate composers in groups and then break them up in the CLI class?
-How do I connect my hash and instantiate?
-
-    
 How to Build a CLI Gem
 
 1. Plan your gem, imagine your interface

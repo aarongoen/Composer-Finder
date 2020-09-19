@@ -33,7 +33,7 @@ class ComposerFinderYes::Composer
         "(#{birth_year}-#{death_year})"
     end
 
-    # def date_parser
+    # def date_parser # I could build this to streamline repetitive code.
     # end
 
     def age
@@ -43,11 +43,9 @@ class ComposerFinderYes::Composer
         age = (death_year.to_i)-(birth_year.to_i)
         "aged #{age}" # When I put "puts" at the beginning of this line, my CLI #info method listed the output in the wrong order, i.e. "aged 86 \n Ralph Vaughan Williams (1872-1958), , Late Romantic Era. Why?"
         # end 
-        # binding.pry 
         # If the composer is living, this doesn't work. Can create a method that includes the current date.
-    end
 
         #turn into date objects?
         #"https://ruby-doc.org/stdlib-2.7.1/libdoc/date/rdoc/Date.html"
-
+    end
 end
