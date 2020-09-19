@@ -1,5 +1,5 @@
 class ComposerFinderYes::Composer
-    require 'date'
+    require 'date' # A gem to parse dates.
 
     attr_accessor :complete_name, :birth, :death, :epoch
 
@@ -13,29 +13,38 @@ class ComposerFinderYes::Composer
         @@all << self 
     end 
 
-    def self.all
+    def self.all # Calls up the @@all array.
         @@all
     end 
 
-    def name
+    def name # So I don't call it @complete_name each time.
         @complete_name
     end
 
-    def birth_year
+    def birth_year # Parses the :birth attribute format from yyyy-mm-dd to yyyy. Splits by hyphen to exclude everything after the hyphen. Makes the string into an integer. 
         "#{birth.split("-")[0].to_i}"
     end
 
     def death_year
-        "#{death.split("-")[0].to_i}"
+        "#{death.split("-")[0].to_i}" 
     end
 
     def dates
         "(#{birth_year}-#{death_year})"
     end
 
+    # def date_parser
+    # end
+
     def age
-        "aged #{death_year.to_i} - #{birth_year.to_i}"
+        # if birth_year == 0
+        #     birth_year = current date.split("-")[0].to_i
+        # else 
+        age = (death_year.to_i)-(birth_year.to_i)
+        "aged #{age}" # When I put "puts" at the beginning of this line, my CLI #info method listed the output in the wrong order, i.e. "aged 86 \n Ralph Vaughan Williams (1872-1958), , Late Romantic Era. Why?"
+        # end 
         # binding.pry 
+        # If the composer is living, this doesn't work. Can create a method that includes the current date.
     end
 
         #turn into date objects?

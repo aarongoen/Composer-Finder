@@ -2,7 +2,7 @@
 require 'pry'
 
 class ComposerFinderYes::CLI 
-    
+    #
     def initialize
         @@short_list = []
     end
@@ -15,8 +15,8 @@ class ComposerFinderYes::CLI
     end
 
     def greeting
-        puts "Hello! Welcome to the Discovering The Great Composers app!
-This app can help you find out about composers you may not know about yet." 
+        puts "Hello! Welcome to the Discovering The Great Composers app!"
+        puts "This app can help you find out about composers you may not know about yet." 
     end
 
     def gets_composers
@@ -72,7 +72,7 @@ This app can help you find out about composers you may not know about yet."
         index = input.to_i-1
         if index.between?(0, @@short_list.length-1)
             composer = @@short_list[index]
-            puts "#{composer.name} #{composer.dates}, #{composer.age}, #{composer.epoch} Era"
+            puts "#{composer.name} #{composer.dates}, #{composer.age}, #{composer.epoch} Era" # When I leave out "puts" it only outputs composer's age, nothing else. Why?
         # elsif
         elsif input == "list"
             list 

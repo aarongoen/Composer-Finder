@@ -1,8 +1,7 @@
 #!/usr/bin/env ruby
+# this requires the composer_finder_yes file to the CLI file.
+# It creates a new instance of the CLI for the user to interact with.
 
 require './lib/composer_finder_yes'
 
-# require "bundler/setup"
-# require "composer_finder_yes"
-# binding.pry
 ComposerFinderYes::CLI.new.call
