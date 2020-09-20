@@ -4,6 +4,7 @@ require 'json'
 require 'pry'
 require 'awesome_print'
 require 'date'
+require 'colorize'
 
 
 class ComposerFinderYes::Api # Uses the name-space to differentiate this Api from any other Apis.

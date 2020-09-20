@@ -18,7 +18,7 @@ class ComposerFinderYes::CLI
     end
 
     def greeting
-        puts "Hello! Welcome to the Discovering the Great Composers app!"
+        puts "Hello! Welcome to the Discovering the Great Composers app!".colorize(:magenta)
         puts "This app can help you find out about composers you may not know about yet." 
     end
 
@@ -29,7 +29,7 @@ class ComposerFinderYes::CLI
     def menu
         input = nil #Why do I need "input = nil"?
         while input != "exit"
-            puts "What would you like to do: list, info, help, or exit?"
+            puts "What would you like to do: list, info, help, or exit?".colorize(:light_cyan)
             input = gets.strip
 
             case input 
@@ -40,6 +40,7 @@ class ComposerFinderYes::CLI
             when  "help"
                 help
             when  "exit"
+                goodbye # Says goodbye.
                 exit
             else
                 puts "Invalid entry. What would you like to do: list, info, help, or exit?"
@@ -82,12 +83,12 @@ class ComposerFinderYes::CLI
     def help
         puts "      list - Lists a set of random composers."
         puts "      help - Brings up this dialog"
-        puts "      info - Gives the composer's dates and time period and link?."
+        puts "      info - Gives the composer's dates and era."
         puts "      exit - Exits the program."
     end
     # binding.pry
     def goodbye
-            puts "    Thank you for using the Discovering the Great Composers app!"
+            puts "    Thank you for using the Discovering the Great Composers app!".colorize(:light_cyan)
     end
     
 end

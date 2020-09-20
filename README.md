@@ -1,18 +1,12 @@
 # ComposerFinderYes
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/composer_finder_yes`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Welcome to the Discovering the Great Composers! You can find out information about a randomized handful of great composers. 
 
 ## Installation
 
 clone the repository
 run bundle install
-run ./bin/composer
-
-## Usage
-
-TODO: Write usage instructions here
+run ./bin/composer-finder-yes
 
 ## Development
 
@@ -31,4 +25,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the ComposerFinderYes project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/<github username>/composer_finder_yes/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the ComposerFinderYes project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/aarongoen/composer_finder_yes/blob/master/CODE_OF_CONDUCT.md).
