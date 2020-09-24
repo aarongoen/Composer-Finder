@@ -32,7 +32,7 @@ The CLI should:
 
 "Role Playing Scenario"
 
-User types: ./bin/composer-finder-yes
+User types: ./bin/composer-finder
 
     puts "Hello! Welcome to the Discovering the Great Composers app!
     This app can help you find out about composers you may not know about yet. 

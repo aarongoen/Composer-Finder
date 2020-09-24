@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe ComposerFinderYes do
+describe ComposerFinder do
     it 'has a version number' do
-        expect(ComposerFinderYes::VERSION).not_to be 
+        expect(ComposerFinder::VERSION).not_to be 
         end
 
     it 'does something useful' do 

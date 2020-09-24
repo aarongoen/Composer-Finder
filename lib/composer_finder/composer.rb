@@ -1,4 +1,4 @@
-class ComposerFinderYes::Composer
+class ComposerFinder::Composer
     require 'date' # A gem to parse dates.
 
     attr_accessor :complete_name, :birth, :death, :epoch
@@ -40,7 +40,7 @@ class ComposerFinderYes::Composer
         # if birth_year == 0
         #     birth_year = current date.split("-")[0].to_i
         # else 
-        age = (death_year.to_i)-(birth_year.to_i)
+        age = death_year.to_i-birth_year.to_i 
         "aged #{age}" # When I put "puts" at the beginning of this line, my CLI #info method listed the output in the wrong order, i.e. "aged 86 \n Ralph Vaughan Williams (1872-1958), , Late Romantic Era. Why?"
         # end 
         # If the composer is living, this doesn't work. Can create a method that includes the current date.

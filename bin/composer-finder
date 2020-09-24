@@ -2,6 +2,6 @@
 # this requires the composer_finder_yes file to the CLI file.
 # It creates a new instance of the CLI for the user to interact with.
 
-require './lib/composer_finder_yes'
+require './lib/environment'
 
-ComposerFinderYes::CLI.new.call
+ComposerFinder::CLI.new.call

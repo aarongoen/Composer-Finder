@@ -7,7 +7,7 @@ require 'date'
 require 'colorize'
 
 
-class ComposerFinderYes::Api # Uses the name-space to differentiate this Api from any other Apis.
+class ComposerFinder::Api # Uses the name-space to differentiate this Api from any other Apis.
 
     def gets_composer_hash
         
@@ -23,7 +23,7 @@ class ComposerFinderYes::Api # Uses the name-space to differentiate this Api fro
             birth = composer["birth"]
             death = composer["death"]
             epoch = composer["epoch"]
-            ComposerFinderYes::Composer.new(complete_name, birth, death, epoch) # Instantiates new composer with arguments created.
+            ComposerFinder::Composer.new(complete_name, birth, death, epoch) # Instantiates new composer with arguments created.
         end
     end
 end 

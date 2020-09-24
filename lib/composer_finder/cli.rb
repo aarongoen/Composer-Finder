@@ -1,7 +1,7 @@
 #CLI Controller 
 require 'pry'
 
-class ComposerFinderYes::CLI 
+class ComposerFinder::CLI 
     
     def initialize
         @@short_list = []
@@ -10,7 +10,7 @@ class ComposerFinderYes::CLI
     def call # Calls up a new instance of the program and begins the workflow.
         greeting 
         gets_composers
-        # ComposerFinderYes::Api # I don't think I need this here
+        # ComposerFinder::Api # I don't think I need this here
         menu
         info
         help
@@ -23,11 +23,11 @@ class ComposerFinderYes::CLI
     end
 
     def gets_composers
-        ComposerFinderYes::Api.new.gets_composer_hash # Gets the hash from the Api class.
+        ComposerFinder::Api.new.gets_composer_hash # Gets the hash from the Api class.
     end
 
     def menu
-        input = nil #Why do I need "input = nil"?
+        input = nil 
         while input != "exit"
             puts "What would you like to do: list, info, help, or exit?".colorize(:light_cyan)
             input = gets.strip
@@ -56,12 +56,14 @@ class ComposerFinderYes::CLI
 
         puts "Here is a randomized list of influential composers:"
 
-        ComposerFinderYes::Composer.all.each_with_index do |composer, i|  # Gets data from Composer hash and goes through each instance and indexes it.
+        ComposerFinder::Composer.all.each_with_index do |composer, i|  # Gets data from Composer hash and goes through each instance and indexes it.
             puts "  #{i+1}. #{composer.name}" # Puts the index and composer name.
             @@short_list << composer # Puts the new instance in the @@short_list array that was initialized at the beginning of this (.CLI) class.
         end 
     end
     
+    # def info 
+    # puts "how many composers would like to learn about?"
 
     def info 
        puts "Which composer would you like to learn more about?"

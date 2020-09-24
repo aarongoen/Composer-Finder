@@ -1,14 +1,14 @@
 require_relative 'lib/composer_finder_yes/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "composer_finder_yes"
-  spec.version       = ComposerFinderYes::VERSION
+  spec.name          = "composer_finder"
+  spec.version       = ComposerFinder::VERSION
   spec.authors       = ["aarongoen"]
   spec.email         = ["aarongoen2.0@gmail.com"]
 
   spec.summary       = %q{TODO: Write a short summary, because RubyGems requires one.}
   spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "git@github.com:aarongoen/Composer-Finder-Yes.git"
+  spec.homepage      = "git@github.com:aarongoen/Composer-Finder.git"
   spec.license       = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
 
