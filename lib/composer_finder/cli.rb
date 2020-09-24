@@ -4,7 +4,7 @@ require 'pry'
 class ComposerFinder::CLI 
     
     def initialize
-        @@short_list = []
+        @short_list = []
     end
 
     def call # Calls up a new instance of the program and begins the workflow.
@@ -12,7 +12,7 @@ class ComposerFinder::CLI
         gets_composers
         # ComposerFinder::Api # I don't think I need this here
         menu
-        info
+        # info
         help
         goodbye
     end
@@ -26,6 +26,8 @@ class ComposerFinder::CLI
         ComposerFinder::Api.new.gets_composer_hash # Gets the hash from the Api class.
     end
 
+    #create menu_first method?
+    
     def menu
         input = nil 
         while input != "exit"
@@ -52,13 +54,13 @@ class ComposerFinder::CLI
         #(Asks user how many return values they would like; Defaults to 5 values.)
         #Generates a list of composers (that covers a range of time periods).
         #Returns list to user.
-        # @@short_list = []
+        # @short_list = []
 
         puts "Here is a randomized list of influential composers:"
 
         ComposerFinder::Composer.all.each_with_index do |composer, i|  # Gets data from Composer hash and goes through each instance and indexes it.
             puts "  #{i+1}. #{composer.name}" # Puts the index and composer name.
-            @@short_list << composer # Puts the new instance in the @@short_list array that was initialized at the beginning of this (.CLI) class.
+            @short_list << composer # Puts the new instance in the @short_list array that was initialized at the beginning of this (.CLI) class.
         end 
     end
     
@@ -70,8 +72,8 @@ class ComposerFinder::CLI
             
         input = gets.strip
         index = input.to_i-1
-        if index.between?(0, @@short_list.length-1) # Validates input to avoid error. User cannot enter 0 or any number higher than how many are in the array.
-            composer = @@short_list[index]
+        if index.between?(0, @short_list.length-1) # Validates input to avoid error. User cannot enter 0 or any number higher than how many are in the array.
+            composer = @short_list[index]
             puts "  #{composer.name} #{composer.dates}, #{composer.age}, #{composer.epoch} Era" # When I leave out "puts" it only outputs composer's age, nothing else. Why?
         elsif input == "exit"
             exit

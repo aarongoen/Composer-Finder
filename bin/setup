@@ -3,7 +3,7 @@ set -euo pipefail
 IFS=$'\n\t'
 set -vx
 
-# Installs the bundler.
+# Installs the bundler. Bundler is a package that sets up a template of necessary files.
 
 bundle install
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
-# this requires the composer_finder_yes file to the CLI file.
-# It creates a new instance of the CLI for the user to interact with.
+# above is the Interpreter: This tells the program to use Ruby.
+# below: This creates a new instance of the CLI for the user to interact with and instantiates a new CLI.
 
 require './lib/environment'
 

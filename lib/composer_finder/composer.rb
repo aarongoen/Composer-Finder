@@ -1,7 +1,7 @@
 class ComposerFinder::Composer
     require 'date' # A gem to parse dates.
 
-    attr_accessor :complete_name, :birth, :death, :epoch
+    attr_reader :birth, :death, :epoch
 
     @@all = [] 
 
@@ -12,6 +12,10 @@ class ComposerFinder::Composer
         @epoch = epoch
         @@all << self 
     end 
+
+    # def birth 
+    #     @birth
+    # end
 
     def self.all # Calls up the @@all array.
         @@all
@@ -26,7 +30,11 @@ class ComposerFinder::Composer
     end
 
     def death_year
-        "#{death.split("-")[0].to_i}" 
+        if death
+            "#{death.split("-")[0].to_i}" 
+        else 
+            "present"
+        end
     end
 
     def dates
@@ -37,10 +45,13 @@ class ComposerFinder::Composer
     # end
 
     def age
-        # if birth_year == 0
-        #     birth_year = current date.split("-")[0].to_i
-        # else 
-        age = death_year.to_i-birth_year.to_i 
+        if !birth
+            age = "unknown"
+        elsif death
+            age = death_year.to_i-birth_year.to_i 
+        else
+            age = Time.new.year-birth_year.to_i
+        end
         "aged #{age}" # When I put "puts" at the beginning of this line, my CLI #info method listed the output in the wrong order, i.e. "aged 86 \n Ralph Vaughan Williams (1872-1958), , Late Romantic Era. Why?"
         # end 
         # If the composer is living, this doesn't work. Can create a method that includes the current date.
